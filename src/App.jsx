@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Landing from "./pages/Landing";
+import Section1 from "./components/Landing/section1";
 
 const App = () => {
+  const [isDark, setIsDark] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
   return (
-    <div className="flex flex-col justify-center items-center h-screen ">
-      <h1 className="text-3xl font-bold text-red-300 font-mont"> 
-        Bun vite app with react
-      </h1>
-    </div>
+    <>
+      <Navbar isDark={isDark} setIsDark={setIsDark} />
+      <Section1 />
+      <Footer isDark={isDark} />
+    </>
   );
 };
 
