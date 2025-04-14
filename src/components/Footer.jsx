@@ -11,7 +11,7 @@ import logoLight from "../assets/logo_white.png";
 
 const Footer = ({ isDark }) => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200 py-10">
+    <footer className="bg-[#DDC7BB] dark:bg-gray-900 text-gray-700 dark:text-gray-200 py-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1   md:grid-cols-3 lg:grid-cols-5 gap-8   text-center">
         <div className="flex flex-col items-center justify-center col-span-1 md:col-span-3 lg:col-span-1 ">
           <img
@@ -35,7 +35,7 @@ const Footer = ({ isDark }) => {
         />
         <QuickLinks
           title={"Find Us"}
-          items={["Events", "Locations", "Newsletters", ]}
+          items={["Events", "Locations", "Newsletters"]}
         />
 
         <div className="col-span-1 md:col-span-3 lg:col-span-1">
@@ -80,7 +80,10 @@ const QuickLinks = ({ items, title }) => {
       <ul className="space-y-2 ">
         {items?.map((item) => (
           <li key={item}>
-            <a href={`#`} className="hover:text-blue-500">
+            <a
+              href={`#`}
+              className="hover:text-[#2B1B12] dark:hover:text-[#4e4e4e] hover:font-semibold transition-all duration-150"
+            >
               {item}
             </a>
           </li>
