@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Landing from "./pages/Landing";
 import Section1 from "./components/Landing/section1";
+import Section2 from "./components/Landing/Section2";
+import Section3 from "./components/Landing/Section3";
+import Section4 from "./components/Landing/Section4";
 
 const App = () => {
   const [isDark, setIsDark] = useState(
@@ -13,6 +15,9 @@ const App = () => {
     <>
       <Navbar isDark={isDark} setIsDark={setIsDark} />
       <Section1 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
       <Footer isDark={isDark} />
     </>
   );
