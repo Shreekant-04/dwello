@@ -45,11 +45,8 @@ const LanguageSwitcher = () => {
       { label: "Maithili", value: "mai" },
       { label: "Sanskrit", value: "sa" },
       { label: "Dogri", value: "doi" },
-      { label: "Manipuri", value: "mni" },
-      { label: "Kashmiri", value: "ks" },
       { label: "Sindhi", value: "sd" },
       { label: "Santali", value: "sat" },
-      { label: "Bodo", value: "brx" },
     ],
   };
   return (
@@ -58,7 +55,7 @@ const LanguageSwitcher = () => {
       <select
         onChange={handleLanguageChange}
         defaultValue="en"
-        className="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 border border-gray-300 dark:border-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition duration-300 focus:outline-none"
+        className="bg-[#DDC7BB] dark:bg-gray-800 text-gray-800 dark:text-gray-100   px-4 py-2 rounded-lg  transition duration-300 focus:outline-none"
       >
         {Object.entries(languages).map(([groupLabel, options]) => (
           <optgroup label={groupLabel} key={groupLabel}>
