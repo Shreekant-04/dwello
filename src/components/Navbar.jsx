@@ -5,6 +5,7 @@ import logoLight from "../assets/logo_white.png";
 
 const Navbar = ({ isDark, setIsDark }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -19,8 +20,42 @@ const Navbar = ({ isDark, setIsDark }) => {
 
   const navLinks = ["Home", "Service", "Agent", "Contact"];
 
+  useEffect(() => {
+    const onScroll = () => {
+      const targetElement = document.querySelector(".skiptranslate");
+
+      if (!targetElement) {
+        console.warn(`Element not found.`);
+        setSticky(true);
+        return;
+      }
+
+      const { display } = targetElement.style;
+
+      if (display === "none") {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    // Call once initially (optional)
+    onScroll();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed z-50 top-0 left-0 w-full bg-[#FEF7F2]  p-2  dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <nav
+      className={`fixed z-50 top-${
+        sticky ? 0 : 1
+      } left-0 w-full bg-[#FEF7F2]  p-2  dark:bg-gray-900 dark:text-white transition-colors duration-300`}
+    >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="font-bold h-10  flex justify-center ">

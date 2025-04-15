@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Section1 from "./components/Landing/section1";
@@ -11,9 +11,11 @@ const App = () => {
     localStorage.getItem("theme") === "dark"
   );
 
+  
+
   return (
     <>
-      <Navbar isDark={isDark} setIsDark={setIsDark} />
+      <Navbar isDark={isDark} setIsDark={setIsDark}  />
       <Section1 />
       <Section2 />
       <Section3 />
