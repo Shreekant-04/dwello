@@ -8,6 +8,7 @@ import {
 
 import logoDark from "../assets/logo_dark.png";
 import logoLight from "../assets/logo_white.png";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Footer = ({ isDark }) => {
   return (
@@ -27,7 +28,7 @@ const Footer = ({ isDark }) => {
 
         <QuickLinks
           title="Quick Links"
-          items={["Home", "Carrer", "Our Team ", "Resources"]}
+          items={["Home", "Carrier", "Our Team ", "Resources"]}
         />
         <QuickLinks
           title={"Support"}
@@ -64,9 +65,11 @@ const Footer = ({ isDark }) => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 pt-4 text-center text-sm">
+      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 pt-4 text-center text-sm relative">
         &copy; {new Date().getFullYear()} Dwello. All rights reserved.
+        <LanguageSwitcher  />
       </div>
+      
     </footer>
   );
 };
